@@ -14,7 +14,7 @@ const StorePrivateRoute = ({ component: Component, ...rest }) => {
     }
     const getLoggedIn = async () => {
         try {
-            const res = await axios.get("/api/private/getseller", config);
+            const res = await axios.get("http://localhost:5000/api/private/getseller", config);
             if (res) {
                 dispatch({ type: "FETCH_SUCCESS", seller: res.data });
             } else {

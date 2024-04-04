@@ -40,14 +40,14 @@ function CreateStoreMap() {
 		className="mapView"
 			ref={mapRef}
 			{...viewport}
-			mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
+			mapboxApiAccessToken={"pk.eyJ1IjoieW9rZXNoMTAiLCJhIjoiY2x1azc4b2V6MDB2YzJqb2Y1aWpvZXlvYyJ9.pe1wECKUjSZjFEgYL-J3WQ"}
 			onViewportChange={handleViewportChange}
 			mapStyle="mapbox://styles/skgupta77159/ckrodymtt4fuj17mvlpbwydpq"
 		>
 			<Geocoder
 				mapRef={mapRef}
 				onViewportChange={handleGeocoderViewportChange}
-				mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
+				mapboxApiAccessToken={"pk.eyJ1IjoieW9rZXNoMTAiLCJhIjoiY2x1azc4b2V6MDB2YzJqb2Y1aWpvZXlvYyJ9.pe1wECKUjSZjFEgYL-J3WQ"}
 				position="top-left"
 			/>
             <Marker latitude={viewport.latitude} longitude={viewport.longitude} offsetLeft={-20} offsetTop={-10}></Marker>

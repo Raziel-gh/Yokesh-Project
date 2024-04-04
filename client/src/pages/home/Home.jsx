@@ -22,11 +22,12 @@ export default function Home() {
     // console.log(Itemdata.productData)
 
     useEffect(() => {
+        const REACT_APP_MAPBOX = "pk.eyJ1IjoieW9rZXNoMTAiLCJhIjoiY2x1azc4b2V6MDB2YzJqb2Y1aWpvZXlvYyJ9.pe1wECKUjSZjFEgYL-J3WQ"
         const getUserLocation = async () => {
             let list = [];
             if (!location.error) {
                 setLocallowed(true)
-                const res = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location.coordinates.lng},${location.coordinates.lat}.json?access_token=${process.env.REACT_APP_MAPBOX}`);
+                const res = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location.coordinates.lng},${location.coordinates.lat}.json?access_token=${REACT_APP_MAPBOX}`);
                 const address = res.data.features;
                 for (let j = 1; j < address.length; j++) {
                     let pair = { id: address[j].place_type[0], name: address[j].text };

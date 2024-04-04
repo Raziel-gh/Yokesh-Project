@@ -19,7 +19,7 @@ exports.checkstore = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, "giri");
 
     const seller = await Seller.findById(decoded.id);
     /* const store = await Store.findOne({ownerId: decoded.id}); */

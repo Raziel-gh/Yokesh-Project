@@ -70,8 +70,8 @@ sellerSchema.methods.matchPassword = async function (password) {
 
 sellerSchema.methods.getSignedJwtToken = async function() {
   try{
-    let token = jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-      expiresIn: process.env.JWT_EXPIRE,
+    let token = jwt.sign({ id: this._id }, "giri", {
+      expiresIn: "30d",
     });
     this.tokens = this.tokens.concat({token: token});
     await this.save();

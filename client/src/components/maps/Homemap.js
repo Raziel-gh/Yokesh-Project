@@ -56,7 +56,7 @@ function Homemap(props) {
 			className="mapView"
 			ref={mapRef}
 			{...viewport}
-			mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
+			mapboxApiAccessToken={"pk.eyJ1IjoieW9rZXNoMTAiLCJhIjoiY2x1azc4b2V6MDB2YzJqb2Y1aWpvZXlvYyJ9.pe1wECKUjSZjFEgYL-J3WQ"}
 			onViewportChange={handleViewportChange}
 			mapStyle="mapbox://styles/skgupta77159/ckrodymtt4fuj17mvlpbwydpq"
 		>

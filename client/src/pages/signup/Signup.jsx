@@ -34,14 +34,15 @@ export default function Signup() {
         }
         if (user.password === user.cpassword) {
             try {
-                const {data} = await axios.post("/api/auth/signup", user, config).catch(err => {
+                const {data} = await axios.post("http://localhost:5000/api/auth/signup", user, config).catch(err => {
                     if (err.response.status === 409) {
                         setErrors("User Already Exist!")
                         throw new Error(`user already exist`);
-                    } else {
-                        setErrors("Internal Server Error")
-                        throw new Error(`Internal Server Error`);
                     }
+                    // } else {
+                    //     setErrors("Internal Server Error")
+                    //     throw new Error(`Internal Server Error`);
+                    // }
                     throw err;
                 });
                 localStorage.setItem("authToken", data.token);
